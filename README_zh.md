@@ -6,6 +6,18 @@
 
 **AI 知识合成器** 是一款先进的、一体化的知识管理与智能提取工作台。它利用多种前沿的大语言模型（LLM）和真实的无头浏览器技术，自动从长文本、高反爬机制的复杂网站、PDF、Markdown 乃至本地图片中抓取、合成并提炼出结构化的知识卡片。
 
+## 📸 界面预览
+
+<div align="center">
+  <!-- 请在 GitHub 网页端编辑时，将您的登录页图片拖放到下方引号内替换链接 -->
+  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="登录界面 (Login Interface)" width="48%">
+  &nbsp;
+  <!-- 请在 GitHub 网页端编辑时，将您的主程序图片拖放到下方引号内替换链接 -->
+  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="主程序面板 (Main Workspace)" width="48%">
+  <br/>
+  <em>(左：系统登录页 / 右：主程序工作台)</em>
+</div>
+
 ## ✨ 核心特性
 
 - **🤖 强大多模态引擎**: 支持无缝切换顶尖 AI 模型，包括 **Google Gemini 1.5 Flash**、**Kimi (月之暗面) Vision**，以及 **DeepSeek**。

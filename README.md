@@ -6,6 +6,16 @@
 
 **AI Knowledge Synthesizer** is an advanced, all-in-one knowledge management and extraction workspace. It leverages multiple state-of-the-art Large Language Models (LLMs) and headless browsers to automatically scrape, synthesize, and organize information from raw text, complex anti-crawler websites, PDFs, Markdown files, and even images into structured knowledge cards.
 
+## 📸 Screenshots
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="Login Interface" width="48%">
+  &nbsp;
+  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="Application Workspace" width="48%">
+  <br/>
+  <em>(Login Interface / Workspace)</em>
+</div>
+
 ## ✨ Key Features
 
 - **🤖 Multi-Model Engine**: Seamlessly switch between top-tier LLMs including **Google Gemini 1.5 Flash**, **Kimi Vision (Moonshot)**, and **DeepSeek**.
