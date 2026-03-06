@@ -4,17 +4,17 @@ FROM node:18-bullseye-slim
 # 安装 Chromium 及其必须的系统库 (为了 Puppeteer)
 # 并清理 apt 缓存以缩减 Docker 镜像体积
 RUN apt-get update \
-    && apt-get install -y wget gnupg \
-    && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
-    && apt-get update \
-    && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
-      --no-install-recommends \
-    && rm -rf /var/lib/apt/lists/*
+  && apt-get install -y wget gnupg \
+  && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+  && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
+  && apt-get update \
+  && apt-get install -y google-chrome-stable fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 \
+  --no-install-recommends \
+  && rm -rf /var/lib/apt/lists/*
 
 # 设置环境变量告诉 Puppeteer 不用自己下载 Chromium，并指向刚才安装的 Chrome
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-    PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+  PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
 
 # 设定工作目录
 WORKDIR /app
@@ -23,7 +23,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # 安装项目依赖 (只安装生产依赖以加快部署)
-RUN npm ci
+RUN npm install --legacy-peer-deps
 
 # 复制全部项目文件
 COPY . .
