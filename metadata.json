@@ -1,0 +1,5 @@
+{
+  "name": "AI Knowledge Synthesizer",
+  "description": "A full-stack React application that synthesizes knowledge from text using AI, organizes it into cards, and offers deep dive research capabilities.",
+  "requestFramePermissions": []
+}
