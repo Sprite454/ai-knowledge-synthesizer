@@ -9,9 +9,9 @@
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="Login Interface" width="48%">
+  <img width="1920" height="953" alt="PixPin_2026-03-06_16-13-09" src="https://github.com/user-attachments/assets/a9da7230-e4ee-45e5-a6d0-5f8b3aba5da1" />
   &nbsp;
-  <img src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" alt="Application Workspace" width="48%">
+  <img width="1920" height="953" alt="PixPin_2026-03-06_16-15-33" src="https://github.com/user-attachments/assets/a5e39aca-1827-45d2-bab5-59c6b21369ad" />
   <br/>
   <em>(Login Interface / Workspace)</em>
 </div>
