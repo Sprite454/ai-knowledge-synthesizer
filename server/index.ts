@@ -14,7 +14,7 @@ dotenv.config();
 
 async function startServer() {
     const app = express();
-    const PORT = 3000;
+    const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
     // JSON body parser (大限额：支持 base64 图片)
     app.use(express.json({ limit: '50mb' }));
