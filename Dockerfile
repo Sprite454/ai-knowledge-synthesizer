@@ -1,5 +1,5 @@
-# 使用官方的 Node 轻量级镜像
-FROM node:18-bullseye-slim
+# 使用支持最新 TailwindCSS v4 和 Vite 6 的 Node.js 20 镜像
+FROM node:20-bullseye-slim
 
 # 安装 Chromium 及其必须的系统库 (为了 Puppeteer)
 # 并清理 apt 缓存以缩减 Docker 镜像体积
