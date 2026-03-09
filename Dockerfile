@@ -22,8 +22,8 @@ WORKDIR /app
 # 复制依赖定义
 COPY package*.json ./
 
-# 安装项目依赖 (跳过 lockfile 严格检查，直接根据 package.json 安装最新兼容易用版本)
-RUN npm install --no-package-lock --legacy-peer-deps
+# 安装项目依赖 (由于云端默认设 NODE_ENV=production 会忽略 dev 插件，必须强制传入 --include=dev 以供 Vite 打包)
+RUN npm install --include=dev --no-package-lock --legacy-peer-deps
 
 # 复制全部项目文件
 COPY . .
