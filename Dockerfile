@@ -29,11 +29,11 @@ RUN npm install --include=dev --no-package-lock --legacy-peer-deps
 # 复制全部项目文件
 COPY . .
 
-# 执行全栈构建 (打包 Vite 前端以及检查服务端逻辑)
-RUN npm run build
+# 执行全栈构建 (1. Vite 打包前端 → dist/  2. tsc 编译服务端 → dist-server/)
+RUN npm run build:all
 
 # 容器对外暴露端口 (Render.com 默认会将环境 $PORT 转发至容器)
-EXPOSE 3000
+EXPOSE 10000
 
-# 启动 Node.js Express 后端服务器
-CMD ["npm", "run", "start"]
+# 使用原生 node 运行已编译的 JS 代码（比 tsx 省约 200MB 内存）
+CMD ["node", "dist-server/index.js"]
