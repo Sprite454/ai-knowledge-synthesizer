@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "tsx server/index.ts",
-    "start": "node dist-server/index.js",
+    "start": "node dist-server/index.mjs",
     "build": "vite build",
-    "build:server": "tsc -p tsconfig.server.json",
+    "build:server": "esbuild server/index.ts --bundle --platform=node --format=esm --outfile=dist-server/index.mjs --packages=external --target=node20",
     "build:all": "npm run build && npm run build:server",
     "preview": "vite preview",
     "clean": "rm -rf dist dist-server",

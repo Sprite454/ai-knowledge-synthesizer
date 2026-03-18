@@ -36,4 +36,4 @@ RUN npm run build:all
 EXPOSE 10000
 
 # 使用原生 node 运行已编译的 JS 代码（比 tsx 省约 200MB 内存）
-CMD ["node", "dist-server/index.js"]
+CMD ["node", "dist-server/index.mjs"]
