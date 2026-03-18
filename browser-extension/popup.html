@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 知识合成器连接设置</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; width: 320px; padding: 15px; margin: 0; color: #333; }
+    h3 { margin-top: 0; color: #10b981; font-size: 16px; margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    .form-group { margin-bottom: 12px; }
+    label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 4px; color: #666; }
+    input[type="text"], input[type="password"] { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 13px; }
+    button { width: 100%; background-color: #10b981; color: white; border: none; padding: 10px; border-radius: 6px; font-size: 14px; cursor: pointer; font-weight: bold; transition: 0.2s; margin-top: 5px; margin-bottom: 10px;}
+    button:hover { background-color: #059669; }
+    .btn-outline { background-color: white; color: #10b981; border: 1px solid #10b981; }
+    .btn-outline:hover { background-color: #ecfdf5; }
+    #status { font-size: 12px; margin-top: 10px; color: #666; text-align: center; }
+    .success { color: #10b981 !important; }
+    .error { color: #ef4444 !important; }
+    .hint { font-size: 11px; color: #999; margin-top: 4px; display: block;}
+    hr { border: 0; border-top: 1px dashed #ddd; margin: 15px 0; }
+  </style>
+</head>
+<body>
+  <h3>⚡ AI 知识合成器 (云连接)</h3>
+  
+  <div class="form-group">
+    <label>远端服务地址 (Render URL)</label>
+    <input type="text" id="serverUrl" placeholder="例如: https://ai-synth-bot.onrender.com" />
+    <span class="hint">填写您的专属云端后台完整链接。</span>
+  </div>
+
+  <div class="form-group">
+    <label>用户专属 Token (免密鉴权密钥)</label>
+    <input type="password" id="userToken" placeholder="例如: yoyy-8asx-12js" />
+    <span class="hint">该 Token 保证任意手机或新电脑安装此插件均可直连。</span>
+  </div>
+  
+  <button id="saveBtn">保存服务器配置</button>
+  
+  <div id="status"></div>
+
+  <hr>
+
+  <div class="form-group">
+    <button id="synthesizeBtn" class="btn-outline">✨ 抓取当前页面链接与标题</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

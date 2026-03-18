@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AI 知识合成器 - 一键剪藏",
+  "version": "1.0.0",
+  "description": "一键将网页内容、链接、或选中文本发送到您的私有 AI 云端，自动浓缩为知识卡片。",
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "icons": {
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "AI 知识合成器",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
