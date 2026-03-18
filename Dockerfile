@@ -14,7 +14,8 @@ RUN apt-get update \
 
 # 设置环境变量告诉 Puppeteer 不用自己下载 Chromium，并指向刚才安装的 Chrome
 ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true \
-  PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable
+  PUPPETEER_EXECUTABLE_PATH=/usr/bin/google-chrome-stable \
+  NODE_ENV=production
 
 # 设定工作目录
 WORKDIR /app

@@ -1,5 +1,6 @@
 import express from 'express';
-import { createServer as createViteServer } from 'vite';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import cardsRouter from './routes/cards';
 import categoriesRouter from './routes/categories';
@@ -33,15 +34,24 @@ async function startServer() {
     app.use('/api/v1/proxy', authMiddleware, proxyRouter);
     app.use('/api/v1/files', authMiddleware, filesRouter);
 
-    // Vite 开发中间件
+    // Vite 开发中间件 vs 生产静态文件
     if (process.env.NODE_ENV !== 'production') {
+        // 仅在开发模式才动态引入 Vite，避免生产环境出现模块解析崩溃
+        const { createServer: createViteServer } = await import('vite');
         const vite = await createViteServer({
             server: { middlewareMode: true },
             appType: 'spa',
         });
         app.use(vite.middlewares);
     } else {
-        app.use(express.static('dist'));
+        // 生产模式：直接托管已打包好的静态文件
+        const __dirname = path.dirname(fileURLToPath(import.meta.url));
+        const distPath = path.resolve(__dirname, '..', 'dist');
+        app.use(express.static(distPath));
+        // SPA 回退：所有非 API 的 GET 请求都返回 index.html
+        app.get('*', (req, res) => {
+            res.sendFile(path.join(distPath, 'index.html'));
+        });
     }
 
     app.listen(PORT, '0.0.0.0', () => {
